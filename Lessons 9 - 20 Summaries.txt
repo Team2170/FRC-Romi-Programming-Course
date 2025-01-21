@@ -1,0 +1,251 @@
+Lesson 9: Gyro Project
+
+Key Robotics Concepts:Using a gyroscope to maintain a robot's orientation [1].
+The concept of a target heading and correcting for deviations using a feedback loop [2].
+Understanding how small mechanical differences or uneven surfaces can cause a robot to deviate from its intended path [3].
+Programming Concepts:Modulo operator to constrain angles to a specific range [4].
+Dynamic adjustment of turning power based on the difference between the target and actual headings [5].
+Updating the target heading based on joystick input [6].
+Further Explanation: Modulo is a mathematical operation that finds the remainder after division of one number by another [4]. It is useful in robotics to constrain angles to a range, such as -180 to 180 degrees, because the gyro sensor reading can increase indefinitely as the robot turns, but a robot's heading is always within that range.
+Lesson 10: Autonomous Commands
+
+Key Robotics Concepts:Utilizing the robot's autonomous mode to execute pre-programmed actions [7].
+Combining commands into command groups to create complex behaviors [7].
+Understanding how subsystems (like Drivetrain) interact with commands [8].
+Programming Concepts:Command-based programming paradigm and its advantages [9, 10].
+The role of the CommandScheduler in managing commands [8, 10].
+The structure of a command including the initialize, execute, end, and isFinished methods [11-15].
+Using sequential command groups to run commands in order [16, 17].
+Creating commands to drive a specific distance [15, 18].
+Further Explanation: In the command-based paradigm, the CommandScheduler automatically handles the execution of commands, which helps prevent multiple commands from trying to control the same subsystem at the same time [8]. This abstraction allows programmers to focus on what the robot needs to do instead of writing low-level logic that makes it happen.
+Lesson 11: Logical Operators
+
+Key Robotics Concepts:
+Testing robot code and accounting for edge cases [19]
+Adding outputs to a program to see what is happening in real time [19, 20]
+Programming Concepts:Using logical operators (and, or, not) in if statements to create complex conditions [21, 22].
+Combining logical operators to simplify complex conditionals [22, 23].
+Adding print statements for debugging and observing the state of the program [20].
+Optimizing code by eliminating duplicate lines in if statements [24].
+Further Explanation: Logical operators allow you to create complex conditions in your code. For example, you might want to do something only if both a button is pressed and the robot is in a specific mode, or you may want to do something if either a sensor is active or a timer has expired.
+Lesson 12: Inheritance & Polymorphism
+
+Key Robotics Concepts:
+Understanding how the WPILib classes and the Romi are set up using inheritance [25, 26].
+Programming Concepts:Composition, where classes are composed of other classes [27, 28].
+Inheritance, where a subclass inherits attributes and methods from a parent class using the "extends" keyword [25, 28].
+Creating hierarchies of classes with inheritance [29, 30].
+Polymorphism, where objects of different classes can be treated as objects of a common superclass [31].
+Using the "extends" keyword to create subclasses [25, 32, 33].
+Overriding methods from parent classes [33].
+Using protected class fields to allow access from subclasses [34].
+Further Explanation: Inheritance allows programmers to write less code by creating a base class that contains all the common code, and subclasses that inherit all of that code. Polymorphism allows a method to work with different kinds of objects without having to specify which type of object to work with, which can simplify code and make it easier to maintain.
+Lesson 13: Arrays
+
+Key Robotics Concepts:There aren't specific robotics concepts focused on in this lesson, it is mostly focused on expanding Java knowledge.
+Programming Concepts:Arrays to store collections of variables of the same type [35, 36].
+Accessing and updating elements in an array [36].
+Using loops to process array elements [36, 37].
+ArrayLists to create dynamic, resizable lists [37, 38].
+Working with two dimensional arrays [39].
+Further Explanation: Arrays are useful for storing and managing collections of data. For example, you can use an array to store the results from a series of sensor readings, or the coordinates of a robot's path.
+Lesson 14: Abstract Classes & Interfaces
+
+Key Robotics Concepts:
+There aren't specific robotics concepts focused on in this lesson, it is mostly focused on expanding Java knowledge
+Programming Concepts:Abstract classes to define common properties and behaviors of subclasses [40-42].
+Abstract methods that must be implemented in subclasses [43].
+Interfaces to define a contract of methods that a class must implement [44, 45].
+Implementing multiple interfaces [44, 45].
+The difference between abstract classes and interfaces, and when to use each [44].
+Encapsulation, coupling, and cohesion as related to class design [46, 47].
+Further Explanation: Abstract classes are used to group classes with common features but some implementation differences, while interfaces are used to define a contract that a class must adhere to. They are also useful in a situation where classes have multiple roles, where you may inherit from one class, and implement many interfaces, because classes can only inherit from one class [40, 44].
+Lesson 15: Static & Super
+
+Key Robotics Concepts:
+There aren't specific robotics concepts focused on in this lesson, it is mostly focused on expanding Java knowledge
+Programming Concepts:Static methods and variables that belong to the class rather than an instance of the class [48, 49].
+Using static methods to create utility functions [49].
+The super keyword to call the constructor of a parent class [49].
+Further Explanation: Static methods and variables are useful for things that are common to all instances of the class. For example, a static variable could be used to track the total number of objects created from a class, or a static method could be used to convert degrees to radians.
+Quizzes for Each Lesson
+
+Lesson 9 Quiz
+
+What is the primary purpose of a gyroscope in a robot?
+a) Measure speed b) Measure distance c) Measure orientation d) Measure battery life
+What is a target heading?
+a) The direction the robot is actually moving b) The desired direction the robot should move c) The speed at which the robot is moving d) The distance the robot has traveled
+What programming concept is used to bring the gyro angle within a desired range?
+a) Conditional statements b) Modulo operation c) Loops d) Recursion
+How is the turning power of the robot adjusted in this lesson?
+a) Based on static values b) Based on the speed of the robot c) Based on the difference between target and current headings d) Based on time
+What is one reason the robot might not drive straight without adjustments?
+a) The wheels are different colors b) One side of the drivetrain has more mechanical resistance than the other c) The battery is low d) The code is too long.
+Answer Key: 1: c, 2: b, 3: b, 4: c, 5: b
+
+Lesson 10 Quiz
+
+What is the main focus of the robot’s autonomous mode?
+a) Driving with a controller b) Following pre-programmed instructions c) Reacting to user input d) Responding to sensor data
+What is a command group?
+a) A single instruction b) A collection of methods c) A list of commands that run sequentially or in parallel d) A variable used to control the robot
+What is the purpose of the CommandScheduler?
+a) To set motor speeds b) To manage which commands run on which subsystems c) To receive user input d) To manage the robot's battery life
+Which method of a command is called repeatedly while the command is running?
+a) initialize b) end c) isFinished d) execute
+What is the method that is called when a command has finished executing?
+a) initialize b) end c) isFinished d) execute
+What is the purpose of the isFinished method?
+a) To start the command b) To check if the command should stop c) To set the robot's speed d) To set the robot's turning angle
+Answer Key: 1: b, 2: c, 3: b, 4: d, 5: b, 6: b
+
+Lesson 11 Quiz
+
+Which logical operator returns true only if both conditions it checks are true?
+a) and b) or c) not d) either
+What does the "or" logical operator do?
+a) Returns true if both conditions are true b) Returns true if at least one condition is true c) Returns true if both conditions are false d) Reverses the condition
+What is an output used for in testing?
+a) To set the robot's speed b) To see the robot's orientation c) To see what is happening in real time d) To improve the robot's battery life.
+What is an "edge case" in testing?
+a) A typical scenario b) An unusual or extreme scenario c) The most efficient way d) The fastest way to drive the robot
+What does duplicated code in an if statement usually indicate?
+a) Good programming style b) Optimization opportunities c) No errors d) Required code
+Answer Key: 1: a, 2: b, 3: c, 4: b, 5: b
+
+Lesson 12 Quiz
+
+What is composition in object-oriented programming?
+a) Combining multiple classes into one b) Creating classes from pre-existing classes c) Classes containing other classes d) Using the "extends" keyword
+What is the main purpose of inheritance?
+a) To break code into smaller pieces b) To avoid repeating code by reusing existing code c) To use the same code multiple times in a single file d) To hide code from other classes
+Which keyword is used in Java to implement inheritance?
+a) implements b) extends c) uses d) imports
+What is polymorphism?
+a) The ability of an object to exist in different forms b) The ability of a method to return multiple types of variables c) The process of turning code into an object d) How robots are made
+What is the purpose of protected variables?
+a) To be accessed by any class b) To be accessed only by the class where they are declared c) To be accessed by the class and its subclasses d) to be accessed only by the CommandScheduler.
+Answer Key: 1: c, 2: b, 3: b, 4: a, 5: c
+
+Lesson 13 Quiz
+
+What is an array?
+a) A single variable b) A function c) A set of variables of the same type d) An object of another class
+How do you access individual elements in an array?
+a) Using the 'get' keyword and the index in brackets b) using the dot operator and the variable name c) using the variable name and dot operator d) Using square brackets and the index
+What does the .length property of an array give you?
+a) the size of the array in memory b) the number of elements in the array c) the array type d) the starting point of the array in memory
+What is an ArrayList?
+a) An array with a fixed size b) An array that is made up of strings c) A dynamic, resizable list d) a list that can only contain integers
+Which is correct for setting an arrayList named myList to an integer of 2?
+a) myList.set(2) b) myList.set(0,2) c) myList.set(myList.size(),2) d) myList.set(2,0)
+Answer Key: 1: c, 2: d, 3: b, 4: c, 5: b
+
+Lesson 14 Quiz
+
+What is an abstract class?
+a) A class that cannot be instantiated b) A class that can have methods without bodies c) A class that is inherited by other classes d) All of the above
+What is an interface?
+a) A class that can be instantiated b) A class that defines methods without bodies c) A class that implements other classes d) A class that has no functionality.
+How many classes can a class inherit from?
+a) Zero b) One c) Two d) Any number
+How many interfaces can a class implement?
+a) Zero b) One c) Two d) Any number
+What does Encapsulation refer to?
+a) Grouping together variables of the same type b) The process of implementing multiple interfaces c) The process of containing related data and methods within the class d) The number of classes that are tightly related.
+What does cohesion refer to?
+a) The grouping together of different classes b) That your classes represent as few things as possible, ideally only one thing c) the degree to which classes are related d) The process of using getters and setters in code.
+Answer Key: 1: d, 2: b, 3: b, 4: d, 5: c, 6: b
+
+Lesson 15 Quiz
+
+What is a static variable?
+a) A variable that can only be changed once b) A variable that belongs to an object c) A variable that belongs to a class d) A variable that cannot be accessed
+What is a static method?
+a) A method that belongs to an object b) A method that is static and cannot change c) A method that belongs to a class d) A method that can only run one time.
+What is the super keyword used for?
+a) To refer to the current class b) To call a method of a parent class c) To call a method of the current class d) to change the type of an object
+Which of these is a good use of a static method?
+a) An object that is a speed controller, which is unique to each instance of the class b) A method that gets the current gyroscope value, which is unique to each instance of the class c) a method that turns a number from degrees to radians, which is common across the class d) A method that changes the color of an LED, which is unique to each instance of the class
+What is an example of where the super keyword should be used in a program?
+a) To create multiple methods with the same names b) To skip steps in a program c) to reuse the constructor of a parent class in a child class d) to prevent a child class from creating a constructor of its own.
+Answer Key: 1: c, 2: c, 3: b, 4: c, 5: c
+
+This response will delve into the concepts of the Romi robot lessons 16 through 20, with a focus on the programming examples.
+Lesson 16: Manual Drive Methods
+
+This lesson transitions from learning Java to modifying and writing code for the Romi. It focuses on creating custom drive methods rather than relying on pre-coded ones.
+
+Tank Drive Implementation: The lesson guides students through creating a tank drive method, which involves controlling each side of the robot's drivetrain independently. This is done as an alternative to the built-in arcadeDrive.
+◦Students must write code that takes joystick inputs and applies them to the left and right motors.
+◦The default arcadeDrive method uses deadbanding, but when creating custom drive methods, students must implement deadbanding themselves.
+◦Students must determine the correct joystick axes to use for tank drive, often using the forward/backward axis of two separate joysticks.
+
+Copying Code from DifferentialDrive: Students are instructed to copy the relevant code for calculating motor outputs from the DifferentialDrive class.
+◦This involves using F12 to navigate to the DifferentialDrive class and copying lines 199-222, which calculate the left and right motor outputs.
+◦The copied code is then adapted to the new custom drive method.
+
+Example: A student might implement a tank drive method that takes two joystick inputs, one for the left side of the robot, and one for the right. They would then scale those inputs to a range between -1 and 1, and send those scaled values to their robot's motors.
+
+Key takeaway: Students learn to implement their own drive control methods.
+Lesson 17: Deadbanding & Turn Scaling
+
+This lesson builds on lesson 16 by adding deadbanding to the custom arcadeDrive method. Deadbanding is when a small range of joystick input is ignored (treated as zero) because joysticks often don't return to perfect zero at rest.
+◦Students create an applyDeadband method that takes a joystick input and returns zero if its absolute value is below a certain threshold.
+◦The applyDeadband method must also ensure the output has the same sign as the input.
+◦Example:
+◦This method sets any input value that is smaller than the deadband to zero.
+
+The lesson also introduces turn scaling, which dynamically reduces turning power based on the robot's speed. The goal is to reduce turning sensitivity at high speeds.
+◦Students create an applyTurnScaling method that calculates a scaling factor based on the speed and reduces the turn value accordingly.
+◦Example:
+
+This method calculates a scaling factor based on the current speed and applies it to the turn input.
+
+Key Takeaway: Students learn to improve their robot's control by implementing deadbanding and turn scaling.
+Lesson 18: Exponential & Linear Control
+
+This lesson focuses on enhancing the arcadeDrive method by implementing exponential and linear control schemes.
+
+Linear Control: With linear control, the joystick value is directly mapped to motor output.
+
+Exponential Control: With exponential control, the joystick value is raised to a power before being mapped to motor output. This allows for fine-tuned control at lower speeds, and more power at higher speeds.
+◦Students must ensure that the sign of the input value is preserved when squaring it for exponential control.
+◦Example: double speed = Math.pow(joystickInput, 2);
+
+Students must create a custom arcadeDriveCustom method that implements both linear and exponential control options.
+
+Students are encouraged to compare the feel of linear and exponential control and choose which one they prefer.
+
+Key Takeaway: Students learn to implement different control schemes, with an emphasis on exponential control, which enhances maneuverability, and how to choose an appropriate control method for a given application.
+Lesson 19: Parallel Command Groups
+
+This lesson introduces parallel command groups, which allow multiple commands to run at the same time across different subsystems. This contrasts with sequential command groups, which run commands one after the other.
+
+Students explore different types of parallel command groups, including ParallelCommandGroup, ParallelRaceGroup, and ParallelDeadlineGroup.
+◦The default ParallelCommandGroup finishes when all commands finish.
+◦The ParallelRaceGroup finishes when any command finishes.
+◦The ParallelDeadlineGroup finishes when a specific command finishes.
+
+Combining Commands: Students learn that command groups can also act as commands, meaning that command groups can be added to other command groups.
+◦This allows for the creation of complex behaviors by combining different types of commands and command groups.
+
+Project: The project involves creating an autonomous routine that uses a parallel command group to control the drivetrain and the on-board LEDs simultaneously.
+◦The robot drives forward and turns while also controlling the on-board LEDs to turn on or off.
+◦Example: A student would create a parallel command group that both drives forward and turns the LED off, then another parallel command group that turns the robot, while turning the LED on.
+
+Key Takeaway: Students learn how to use parallel command groups to control multiple subsystems at once.
+Lesson 20: Integrating Commands In Teleop
+
+This lesson focuses on integrating commands into teleoperated mode, allowing for more automated actions.
+
+Students learn how to bind commands to joystick buttons using methods like whenPressed.
+◦Using whenPressed allows a command to run a single time when the button is pressed.
+◦Example: The code m_controller.getButton(1).whenPressed(new TurnDegrees(180, m_drivetrain)); will cause the robot to turn 180 degrees when button 1 is pressed.
+
+Project: The final project involves creating a program with multiple functions bound to joystick buttons, such as turning the robot left or right, turning the robot around, and returning it to its starting orientation.
+
+Students must integrate concepts and code from previous lessons (16-18) into a single program.
+
+Key Takeaway: Students learn how to automate tasks in teleop mode by binding commands to buttons.
